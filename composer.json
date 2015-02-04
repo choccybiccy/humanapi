@@ -2,6 +2,7 @@
     "name": "choccybiccy/humanapi",
     "description": "The easiest way to integrate health data from anywhere.",
     "license": "MIT",
+    "keywords": ["humanapi"],
     "authors": [
         {
             "name": "Martin Hughes",
@@ -9,5 +10,13 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "~5.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": { "Choccybiccy\\": "src" }
+    }
 }
