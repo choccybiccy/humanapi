@@ -1,0 +1,13 @@
+{
+    "name": "martinph/humanapi",
+    "description": "The easiest way to integrate health data from anywhere.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Hughes",
+            "email": "martinph01@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
