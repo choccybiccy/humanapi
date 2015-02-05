@@ -46,7 +46,7 @@ abstract class Endpoint
 
     /**
      * Build a url that returns recent entry
-r     *
+     *
      * @return string
      */
     abstract protected function buildRecentUrl();
