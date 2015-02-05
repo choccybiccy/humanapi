@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class Weight extends Endpoint
+/**
+ * Class Weight
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class Weight extends MeasurementEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "weight";
 }

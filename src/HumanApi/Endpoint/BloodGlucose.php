@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class BloodGlucose extends Endpoint
+/**
+ * Class BloodGlucose
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class BloodGlucose extends MeasurementEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "blood_glucose";
 }

@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class Sleeps extends Endpoint
+/**
+ * Class Sleeps
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class Sleeps extends PeriodicEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "sleeps";
 }

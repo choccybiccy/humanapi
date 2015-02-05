@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class Activities extends Endpoint
+/**
+ * Class Activities
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class Activities extends PeriodicEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "activities";
 }

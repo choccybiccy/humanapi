@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class Height extends Endpoint
+/**
+ * Class Height
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class Height extends MeasurementEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "height";
 }

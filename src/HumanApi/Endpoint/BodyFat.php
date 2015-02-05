@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class BodyFat extends Endpoint
+/**
+ * Class BodyFat
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class BodyFat extends MeasurementEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "body_fat";
 }

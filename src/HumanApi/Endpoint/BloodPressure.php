@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class BloodPressure extends Endpoint
+/**
+ * Class BloodPressure
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class BloodPressure extends MeasurementEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "blood_pressure";
 }

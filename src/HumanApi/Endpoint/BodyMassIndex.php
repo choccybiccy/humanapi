@@ -2,8 +2,15 @@
 
 namespace Choccybiccy\HumanApi\Endpoint;
 
-use Choccybiccy\HumanApi\Endpoint;
-
-class BodyMassIndex extends Endpoint
+/**
+ * Class BodyMassIndex
+ * @package Choccybiccy\HumanApi\Endpoint
+ */
+class BodyMassIndex extends MeasurementEndpoint
 {
+
+    /**
+     * @var string
+     */
+    protected $type = "bmi";
 }
