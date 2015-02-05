@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Endpoint;
  * Class Sources
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class Sources extends Endpoint
+class Sources extends SimpleEndpoint
 {
 
     /**
@@ -17,26 +17,7 @@ class Sources extends Endpoint
     protected $type = "sources";
 
     /**
-     * {@inheritDoc}
+     * @var bool
      */
-    protected function buildListUrl()
-    {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function buildSpecificEntryUrl($id)
-    {
-        throw new EndpointException("This endpoint does not support specific entries");
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function buildRecentUrl()
-    {
-        throw new EndpointException("This endpoint does not support a recent entries");
-    }
+    protected $listReturnsArray = true;
 }

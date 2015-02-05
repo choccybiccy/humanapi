@@ -9,8 +9,43 @@ namespace Choccybiccy\HumanApi;
 class Human
 {
 
-    public function __construct()
-    {
+    /**
+     * @var
+     */
+    protected $accessToken;
 
+    /**
+     * @var Client
+     */
+    protected $client;
+
+    /**
+     * Constructor
+     *
+     * @param string $accessToken
+     */
+    public function __construct($accessToken)
+    {
+        $this->accessToken = $accessToken;
+    }
+
+    /**
+     * Get endpoint
+     *
+     * @param string $endpoint
+     * @return Endpoint
+     */
+    public function get($endpoint)
+    {
+        $endpoint = "\\Choccybiccy\\HumanApi\\Endpoint\\" . ucfirst($endpoint);
+        if(class_exists($endpoint)) {
+
+            /** @var Endpoint $endpoint */
+            $endpoint = new $endpoint;
+            $endpoint->setAccessToken($this->accessToken);
+
+            return $endpoint;
+
+        }
     }
 }

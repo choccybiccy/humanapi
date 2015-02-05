@@ -59,6 +59,16 @@ class Model
     }
 
     /**
+     * Get data as array
+     *
+     * @return array
+     */
+    public function all()
+    {
+        return $this->data;
+    }
+
+    /**
      * @return Endpoint
      */
     public function getEndpoint()

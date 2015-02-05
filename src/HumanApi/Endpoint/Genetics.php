@@ -8,35 +8,16 @@ use Choccybiccy\HumanApi\Endpoint;
  * Class Genetics
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class Genetics extends Endpoint
+class Genetics extends SimpleEndpoint
 {
 
     /**
      * @var string
      */
-    protected $type = "genetics";
+    protected $type = "genetic/traits";
 
     /**
-     * {@inheritDoc}
+     * @var bool
      */
-    protected function buildListUrl()
-    {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function buildSpecificEntryUrl($id)
-    {
-        throw new EndpointException("This endpoint does not support specific entries");
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function buildRecentUrl()
-    {
-        throw new EndpointException("This endpoint does not support a recent entries");
-    }
+    protected $listReturnsArray = true;
 }

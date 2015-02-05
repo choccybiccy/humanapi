@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Endpoint;
  * Class Locations
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class Locations extends Endpoint
+class Locations extends SimpleEndpoint
 {
 
     /**
@@ -17,27 +17,18 @@ class Locations extends Endpoint
     protected $type = "locations";
 
     /**
-     * {@inheritDoc}
+     * @var bool
      */
-    protected function buildListUrl()
-    {
-
-    }
+    protected $listReturnsArray = true;
 
     /**
      * {@inheritDoc}
      */
     protected function buildSpecificEntryUrl($id)
     {
-
+        return $this->buildUrlParts(array(
+            $this->type,
+            $id,
+        ));
     }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function buildRecentUrl()
-    {
-        throw new EndpointException("This endpoint does not support a recent entries");
-    }
-
 }

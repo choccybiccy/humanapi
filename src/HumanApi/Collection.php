@@ -40,6 +40,16 @@ class Collection implements Countable, IteratorAggregate
     }
 
     /**
+     * Get current
+     *
+     * @return Model
+     */
+    public function current()
+    {
+        return $this->getIterator()->current();
+    }
+
+    /**
      * Get iterator
      *
      * @return ArrayIterator|Traversable

@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Endpoint;
  * Class Meals
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class Meals extends Endpoint
+class Meals extends SimpleEndpoint
 {
 
     /**
@@ -17,26 +17,7 @@ class Meals extends Endpoint
     protected $type = "food/meals";
 
     /**
-     * {@inheritDoc}
+     * @var bool
      */
-    protected function buildListUrl()
-    {
-
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function buildSpecificEntryUrl($id)
-    {
-        throw new EndpointException("This endpoint does not support specific entries");
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function buildRecentUrl()
-    {
-        throw new EndpointException("This endpoint does not support a recent entries");
-    }
+    protected $listReturnsArray = true;
 }
