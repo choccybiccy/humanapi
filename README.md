@@ -11,7 +11,7 @@ This package is a simple PHP library for interacting with the HumanAPI endpoints
 ## Installation
 Installation is a cinch with composer..
 ```bash
-$ composer require choccybiccy/humanapi
+composer require choccybiccy/humanapi
 ```
 ## Usage
 The library has been designed to require minimum effort for developers.
