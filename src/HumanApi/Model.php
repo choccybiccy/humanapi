@@ -56,7 +56,7 @@ class Model
             $key = lcfirst($match[1]);
             return $this->get($key);
         }
-    }
+    } // @codeCoverageIgnore
 
     /**
      * Get data as array

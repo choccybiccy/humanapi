@@ -10,7 +10,7 @@ class Human
 {
 
     /**
-     * @var
+     * @var string
      */
     protected $accessToken;
 
@@ -30,10 +30,21 @@ class Human
     }
 
     /**
+     * Get access token
+     *
+     * @return string
+     */
+    public function getAccessToken()
+    {
+        return $this->accessToken;
+    }
+
+    /**
      * Get endpoint
      *
      * @param string $endpoint
      * @return Endpoint
+     * @codeCoverageIgnore
      */
     public function get($endpoint)
     {

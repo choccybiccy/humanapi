@@ -3,10 +3,10 @@
 namespace Choccybiccy\HumanApi\Endpoint;
 
 /**
- * Class SimpleEndpointTest
+ * Class LocationsTest
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class SimpleEndpointTest extends \PHPUnit_Framework_TestCase
+class LocationsTest extends \PHPUnit_Framework_TestCase
 {
 
 }
