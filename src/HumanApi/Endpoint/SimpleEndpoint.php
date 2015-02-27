@@ -31,7 +31,7 @@ abstract class SimpleEndpoint extends Endpoint
      */
     protected function buildSpecificEntryUrl($id)
     {
-        throw new EndpointException("This endpoint does not support specific entries");
+        throw new UnsupportedEndpointMethodException("This endpoint does not support specific entries");
     }
 
     /**
@@ -39,6 +39,6 @@ abstract class SimpleEndpoint extends Endpoint
      */
     public function buildRecentUrl()
     {
-        throw new EndpointException("This endpoint does not support recent entries");
+        throw new UnsupportedEndpointMethodException("This endpoint does not support recent entries");
     }
 }

@@ -1,2 +1,19 @@
 site_name: HumanAPI PHP Library
 repo_url: https://github.com/choccybiccy/humanapi
+pages:
+- [usage.md, Usage]
+- [endpoints/Activities.md, 'Endpoints', 'Activities']
+- [endpoints/BloodGlucose.md, 'Endpoints', 'BloodGlucose']
+- [endpoints/BloodOxygen.md, 'Endpoints', 'BloodOxygen']
+- [endpoints/BloodPressure.md, 'Endpoints', 'BloodPressure']
+- [endpoints/BodyFat.md, 'Endpoints', 'BodyFat']
+- [endpoints/BodyMassIndex.md, 'Endpoints', 'BodyMassIndex']
+- [endpoints/Genetics.md, 'Endpoints', 'Genetics']
+- [endpoints/HeartRate.md, 'Endpoints', 'HeartRate']
+- [endpoints/Height.md, 'Endpoints', 'Height']
+- [endpoints/Locations.md, 'Endpoints', 'Locations']
+- [endpoints/Meals.md, 'Endpoints', 'Meals']
+- [endpoints/Profile.md, 'Endpoints', 'Profile']
+- [endpoints/Sleeps.md, 'Endpoints', 'Sleeps']
+- [endpoints/Sources.md, 'Endpoints', 'Sources']
+- [endpoints/Weight.md, 'Endpoints', 'Weight']

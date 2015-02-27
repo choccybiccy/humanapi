@@ -1,2 +1,0 @@
-HumanAPI PHP library
-====================
