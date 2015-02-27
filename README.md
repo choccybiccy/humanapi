@@ -1,4 +1,4 @@
-# humanapi
+# humanapi [![Build Status](https://travis-ci.org/choccybiccy/humanapi.svg?branch=master)](https://travis-ci.org/choccybiccy/humanapi)
 The easiest way to integrate health data from anywhere.
 
 ## Introduction
