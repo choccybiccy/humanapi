@@ -142,4 +142,49 @@ class EndpointTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\Choccybiccy\HumanApi\Model', $collection->current());
 
     }
+
+    /**
+     * Test fetchResults
+     */
+    public function testFetchResults()
+    {
+
+        $accessToken = "testAccessToken";
+        $url = "test";
+        $params = array("limit" => 5);
+        $endpoint = $this->getMockEndpoint(array("get", "buildCollection"));
+
+        $result = array("id" => 1, "exampleKey" => "Test");
+
+        $response = $this->getMockBuilder('GuzzleHttp\Message\ResponseInterface')
+            ->disableOriginalConstructor()
+            ->setMethods(array("json"))
+            ->getMockForAbstractClass();
+
+        $response->expects($this->once())
+            ->method("json")
+            ->willReturn($result);
+
+        $this->setProtectedProperty($endpoint, "method", "get");
+        $this->setProtectedProperty($endpoint, "accessToken", $accessToken);
+        $this->setProtectedProperty($endpoint, "listReturnsArray", false);
+
+        $query = array_merge(
+            array(
+                "access_token" => $accessToken,
+            ),
+            $params
+        );
+
+        $endpoint->expects($this->once())
+            ->method("get")
+            ->with($url, array("query" => $query))
+            ->willReturn($response);
+        $endpoint->expects($this->once())
+            ->method("buildCollection")
+            ->with(array($result));
+
+        $this->runProtectedMethod($endpoint, "fetchResults", array($url, $params));
+
+    }
 }
