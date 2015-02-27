@@ -3,6 +3,7 @@
 namespace Choccybiccy\HumanApi\Endpoint;
 
 use Choccybiccy\HumanApi\Endpoint;
+use Choccybiccy\HumanApi\Exception\UnsupportedEndpointMethodException;
 
 /**
  * Class SimpleEndpoint

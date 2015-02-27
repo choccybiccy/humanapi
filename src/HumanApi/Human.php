@@ -49,8 +49,7 @@ class Human
     public function get($endpoint)
     {
         $endpoint = "\\Choccybiccy\\HumanApi\\Endpoint\\" . ucfirst($endpoint);
-        if(class_exists($endpoint)) {
-
+        if (class_exists($endpoint)) {
             /** @var Endpoint $endpoint */
             $endpoint = new $endpoint;
             $endpoint->setAccessToken($this->accessToken);

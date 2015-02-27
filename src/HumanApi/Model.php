@@ -15,20 +15,20 @@ class Model
     protected $data;
 
     /**
-     * @var Endpoint
+     * @var Api
      */
-    protected $endpoint;
+    protected $api;
 
     /**
      * Constructor
      *
      * @param array $data
-     * @param Endpoint $endpoint
+     * @param Api $api
      */
-    public function __construct(array $data, Endpoint $endpoint)
+    public function __construct(array $data, Api $api = null)
     {
         $this->data = $data;
-        $this->endpoint = $endpoint;
+        $this->api = $api;
     }
 
     /**
@@ -39,7 +39,7 @@ class Model
      */
     public function get($key)
     {
-        if(array_key_exists($key, $this->data)) {
+        if (array_key_exists($key, $this->data)) {
             return $this->data[$key];
         }
         return null;
@@ -52,7 +52,7 @@ class Model
      */
     public function __call($method, $arguments)
     {
-        if(preg_match("/get([A-Z]{1}([A-Za-z]+))/is", $method, $match)) {
+        if (preg_match("/get([A-Z]{1}([A-Za-z]+))/is", $method, $match)) {
             $key = lcfirst($match[1]);
             return $this->get($key);
         }
@@ -69,10 +69,10 @@ class Model
     }
 
     /**
-     * @return Endpoint
+     * @return Api
      */
-    public function getEndpoint()
+    public function getApi()
     {
-        return $this->endpoint;
+        return $this->api;
     }
 }

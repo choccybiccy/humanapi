@@ -44,7 +44,7 @@ class SimpleEndpointTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->setExpectedException('Choccybiccy\HumanApi\Endpoint\UnsupportedEndpointMethodException');
+        $this->setExpectedException('Choccybiccy\HumanApi\Exception\UnsupportedEndpointMethodException');
         $this->runProtectedMethod($simple, "buildSpecificEntryUrl", array(1));
 
     }
@@ -60,7 +60,7 @@ class SimpleEndpointTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->setExpectedException('Choccybiccy\HumanApi\Endpoint\UnsupportedEndpointMethodException');
+        $this->setExpectedException('Choccybiccy\HumanApi\Exception\UnsupportedEndpointMethodException');
         $this->runProtectedMethod($simple, "buildRecentUrl", array(1));
 
     }
