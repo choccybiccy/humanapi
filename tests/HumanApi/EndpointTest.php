@@ -2,7 +2,7 @@
 
 namespace Choccybiccy\HumanApi;
 
-require_once __DIR__ . "/Traits/ReflectionMethods.php";
+use Choccybiccy\HumanApi\Traits\ReflectionMethods;
 
 /**
  * Class EndpointTest
@@ -11,7 +11,7 @@ require_once __DIR__ . "/Traits/ReflectionMethods.php";
 class EndpointTest extends \PHPUnit_Framework_TestCase
 {
 
-    use Traits\ReflectionMethods;
+    use ReflectionMethods;
 
     /**
      * Get mock endpoint
@@ -109,9 +109,9 @@ class EndpointTest extends \PHPUnit_Framework_TestCase
         $params = array("test" => "param");
         $url = "test";
 
-        $endpoint = $this->getMockEndpoint(array("buildRecent", "fetchResults"));
+        $endpoint = $this->getMockEndpoint(array("buildRecentUrl", "fetchResults"));
         $endpoint->expects($this->once())
-            ->method("buildRecent")
+            ->method("buildRecentUrl")
             ->willReturn($url);
         $endpoint->expects($this->once())
             ->method("fetchResults")
@@ -140,19 +140,6 @@ class EndpointTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(count($data), $collection->count());
         $this->assertInstanceOf('\ArrayIterator', $collection->getIterator());
         $this->assertInstanceOf('\Choccybiccy\HumanApi\Model', $collection->current());
-
-    }
-
-    /**
-     * Test fetch results
-     */
-    public function testFetchResults()
-    {
-
-        $params = array("test" => "param");
-        $url = "test";
-
-        $collection = $this->runProtectedMethod($endpoint, "fetchResults", array($url, $params));
 
     }
 }
