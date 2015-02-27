@@ -1,10 +1,10 @@
 <?php
 
-namespace Choccybiccy\HumanApi\Endpoint;
+namespace Choccybiccy\HumanApi\Exception;
 
 /**
  * Class UnsupportedEndpointMethodException
- * @package Choccybiccy\HumanApi\Endpoint
+ * @package Choccybiccy\HumanApi\Exception
  */
 class UnsupportedEndpointMethodException extends \Exception
 {

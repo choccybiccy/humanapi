@@ -23,16 +23,16 @@ class ModelTest extends \PHPUnit_Framework_TestCase
      * Get mock model
      *
      * @param array|null $methods
-     * @param \Choccybiccy\HumanApi\Endpoint|null $endpoint
+     * @param \Choccybiccy\HumanApi\Api|null $api
      * @return \PHPUnit_Framework_MockObject_MockObject
      */
-    public function getMockModel($methods = null, $endpoint = null)
+    public function getMockModel($methods = null, $api = null)
     {
-        if(!$endpoint) {
-            $endpoint = $this->getMockEndpoint();
+        if (!$api) {
+            $api = $this->getMockApi();
         }
         return $this->getMockBuilder('Choccybiccy\HumanApi\Model')
-            ->setConstructorArgs(array($this->data, $endpoint))
+            ->setConstructorArgs(array($this->data, $api))
             ->setMethods($methods)
             ->getMock();
     }
@@ -43,7 +43,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase
      * @param array|null $methods
      * @return \PHPUnit_Framework_MockObject_MockObject
      */
-    public function getMockEndpoint($methods = array())
+    public function getMockApi($methods = array())
     {
         return $this->getMockBuilder('Choccybiccy\HumanApi\Endpoint')
             ->disableOriginalConstructor()
@@ -82,10 +82,10 @@ class ModelTest extends \PHPUnit_Framework_TestCase
     /**
      * Test get endpoint returns endpoint
      */
-    public function testGetEndpoint()
+    public function testGetApi()
     {
-        $endpoint = $this->getMockEndpoint();
-        $model = $this->getMockModel(null, $endpoint);
-        $this->assertEquals($endpoint, $model->getEndpoint());
+        $api = $this->getMockApi();
+        $model = $this->getMockModel(null, $api);
+        $this->assertEquals($api, $model->getApi());
     }
 }

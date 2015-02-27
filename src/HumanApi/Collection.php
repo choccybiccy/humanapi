@@ -2,10 +2,10 @@
 
 namespace Choccybiccy\HumanApi;
 
-use ArrayIterator,
-    Countable,
-    IteratorAggregate,
-    Traversable;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Traversable;
 
 /**
  * Class Collection
