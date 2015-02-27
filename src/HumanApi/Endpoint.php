@@ -124,8 +124,11 @@ abstract class Endpoint extends Client
             array(
                 $url,
                 array(
-                    "query" => array(
+                    "query" => array_merge(
+                        array(
                         "access_token" => $this->accessToken,
+                        ),
+                        $params
                     )
                 )
             )

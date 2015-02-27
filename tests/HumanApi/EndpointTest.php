@@ -2,12 +2,16 @@
 
 namespace Choccybiccy\HumanApi;
 
+use Choccybiccy\HumanApi\Traits\ReflectionMethods;
+
 /**
  * Class EndpointTest
  * @package Choccybiccy\HumanApi
  */
 class EndpointTest extends \PHPUnit_Framework_TestCase
 {
+
+    use ReflectionMethods;
 
     /**
      * Get mock endpoint
@@ -105,9 +109,9 @@ class EndpointTest extends \PHPUnit_Framework_TestCase
         $params = array("test" => "param");
         $url = "test";
 
-        $endpoint = $this->getMockEndpoint(array("buildRecent", "fetchResults"));
+        $endpoint = $this->getMockEndpoint(array("buildRecentUrl", "fetchResults"));
         $endpoint->expects($this->once())
-            ->method("buildRecent")
+            ->method("buildRecentUrl")
             ->willReturn($url);
         $endpoint->expects($this->once())
             ->method("fetchResults")
@@ -140,67 +144,47 @@ class EndpointTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test fetch results
+     * Test fetchResults
      */
     public function testFetchResults()
     {
 
-        $params = array("test" => "param");
+        $accessToken = "testAccessToken";
         $url = "test";
+        $params = array("limit" => 5);
+        $endpoint = $this->getMockEndpoint(array("get", "buildCollection"));
 
-        $collection = $this->runProtectedMethod($endpoint, "fetchResults", array($url, $params));
+        $result = array("id" => 1, "exampleKey" => "Test");
 
-    }
+        $response = $this->getMockBuilder('GuzzleHttp\Message\ResponseInterface')
+            ->disableOriginalConstructor()
+            ->setMethods(array("json"))
+            ->getMockForAbstractClass();
 
-    /**
-     * Runs a protected method using the ReflectionClass functionality
-     *
-     * @param      $object
-     * @param      $method
-     * @param null $args
-     *
-     * @return mixed
-     */
-    protected function runProtectedMethod($object, $method, $args = null)
-    {
-        $rflClass = new \ReflectionClass(get_class($object));
-        $rflMethod = $rflClass->getMethod($method);
-        $rflMethod->setAccessible(true);
-        if ($args) {
-            return $rflMethod->invokeArgs($object, $args);
-        } else {
-            return $rflMethod->invoke($object);
-        }
-    }
+        $response->expects($this->once())
+            ->method("json")
+            ->willReturn($result);
 
-    /**
-     * Gets the value of a protected or private property using ReflectionClass functionality
-     *
-     * @param $object
-     * @param $property
-     *
-     * @return mixed
-     */
-    protected function getProtectedProperty($object, $property)
-    {
-        $rflClass = new \ReflectionClass(get_class($object));
-        $rflParam = $rflClass->getProperty($property);
-        $rflParam->setAccessible(true);
-        return $rflParam->getValue($object);
-    }
+        $this->setProtectedProperty($endpoint, "method", "get");
+        $this->setProtectedProperty($endpoint, "accessToken", $accessToken);
+        $this->setProtectedProperty($endpoint, "listReturnsArray", false);
 
-    /**
-     * Sets the value of a protected or private property using ReflectionClass functionality
-     *
-     * @param $object
-     * @param $property
-     * @param $value
-     */
-    protected function setProtectedProperty($object, $property, $value)
-    {
-        $rflClass = new \ReflectionClass(get_class($object));
-        $rflParam = $rflClass->getProperty($property);
-        $rflParam->setAccessible(true);
-        $rflParam->setValue($object, $value);
+        $query = array_merge(
+            array(
+                "access_token" => $accessToken,
+            ),
+            $params
+        );
+
+        $endpoint->expects($this->once())
+            ->method("get")
+            ->with($url, array("query" => $query))
+            ->willReturn($response);
+        $endpoint->expects($this->once())
+            ->method("buildCollection")
+            ->with(array($result));
+
+        $this->runProtectedMethod($endpoint, "fetchResults", array($url, $params));
+
     }
 }

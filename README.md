@@ -14,19 +14,13 @@ Installation is a cinch with composer..
 composer require choccybiccy/humanapi
 ```
 ## Usage
-The library has been designed to require minimum effort for developers.
-
-**Authorising humans**
-(coming soon)
-
-**Querying endpoints**
-(coming soon)
+For usage, see [docs/usage.md](docs/usage.md)
 
 ## Authors
-Written and maintained by Martin Hughes
+Written and maintained by Martin Hughes.
 
 ## Thanks
-Thanks to the HumanAPI (http://humanapi.co) team for their great documentation.
+Thanks to the [HumanAPI](http://humanapi.co) team for their great documentation.
 
 ## Copyright & licensing
-See LICENSE
+See [LICENSE](LICENSE)

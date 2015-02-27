@@ -11,8 +11,7 @@
          bootstrap="./vendor/autoload.php">
     <testsuites>
         <testsuite name="Main test suite">
-            <directory>./tests/unit/</directory>
-            <directory>./tests/unit/*/</directory>
+            <directory>./tests</directory>
         </testsuite>
     </testsuites>
     <filter>
@@ -21,9 +20,9 @@
         </whitelist>
     </filter>
     <logging>
-        <log type="coverage-html" target="build/coverage"/>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
-        <log type="coverage-crap4j" target="build/logs/crap4j.xml"/>
-        <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>
+        <log type="coverage-html" target="./build/coverage"/>
+        <log type="coverage-clover" target="./build/logs/clover.xml"/>
+        <log type="coverage-crap4j" target="./build/logs/crap4j.xml"/>
+        <log type="junit" target="./build/logs/junit.xml" logIncompleteSkipped="false"/>
     </logging>
 </phpunit>
