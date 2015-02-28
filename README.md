@@ -1,4 +1,4 @@
-# humanapi [![Build Status](https://travis-ci.org/choccybiccy/humanapi.svg?branch=master)](https://travis-ci.org/choccybiccy/humanapi) [![Latest Stable Version](https://poser.pugx.org/choccybiccy/humanapi/v/stable.svg)](https://packagist.org/packages/choccybiccy/humanapi) [![License](https://poser.pugx.org/choccybiccy/humanapi/license.svg)](https://packagist.org/packages/choccybiccy/humanapi)
+# humanapi [![Build Status](https://travis-ci.org/choccybiccy/humanapi.svg?branch=master)](https://travis-ci.org/choccybiccy/humanapi) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/choccybiccy/humanapi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/choccybiccy/humanapi/?branch=master) [![Latest Stable Version](https://poser.pugx.org/choccybiccy/humanapi/v/stable.svg)](https://packagist.org/packages/choccybiccy/humanapi) [![License](https://poser.pugx.org/choccybiccy/humanapi/license.svg)](https://packagist.org/packages/choccybiccy/humanapi)
 The easiest way to integrate health data from anywhere.
 
 ## Introduction
