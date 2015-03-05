@@ -22,7 +22,7 @@ class Auth extends Api
     /**
      * @var array
      */
-    protected $sessionTokenObject;
+    protected $sessionTokenData;
 
     /**
      * Constructor
