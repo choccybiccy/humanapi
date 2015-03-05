@@ -2,8 +2,6 @@
 
 namespace Choccybiccy\HumanApi;
 
-use SebastianBergmann\Exporter\Exception;
-
 /**
  * Class Auth
  * @package Choccybiccy\HumanApi
@@ -22,7 +20,7 @@ class Auth extends Api
     protected $apiVersion = 1;
 
     /**
-     * @var stdClass
+     * @var array
      */
     protected $sessionTokenObject;
 
@@ -31,42 +29,33 @@ class Auth extends Api
      *
      * @see https://docs.humanapi.co/docs/connect-backend
      *
-     * @param string $sessionTokenObject
+     * @param array $sessionTokenData
      * @param string $clientSecret
      */
-    public function __construct($sessionTokenObject, $clientSecret)
+    public function __construct(array $sessionTokenData, $clientSecret)
     {
 
-        $sessionTokenObject = $this->decodeJson($sessionTokenObject);
-        $sessionTokenObject->clientSecret = $clientSecret;
-        $this->sessionTokenObject = $sessionTokenObject;
+        $sessionTokenData['clientSecret'] = $clientSecret;
+        $this->sessionTokenData = $sessionTokenData;
 
         parent::__construct();
 
     }
 
     /**
-     * Finish the auth flow and post to connect endpoint
+     * Finish the auth flow and post to connect endpoint, and return response array
+     * containing accessToken and other data about the 'human' entity.
+     *
+     * @return array
      */
     public function finish()
     {
         $response = $this->post(
             $this->buildUrlParts(array("tokens"), "connect"),
             array(
-                "json" => (array) $this->sessionTokenObject,
+                "json" => $this->sessionTokenData,
             )
         );
-    }
-
-    /**
-     * Decode JSON data
-     *
-     * @param string $str JSON data
-     * @return stdClass
-     */
-    protected function decodeJson($str)
-    {
-        $str = preg_replace("/([a-zA-Z0-9_]+?):/" , "\"$1\":", $str); // fix variable names
-        return json_decode($str);
+        return $response->json();
     }
 }
