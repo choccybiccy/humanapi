@@ -123,7 +123,7 @@ can be retrieved.
 | [HeartRate](endpoints/HeartRate.md)         | Yes     | Yes     | Yes       |
 | [Height](endpoints/Height.md)               | Yes     | Yes     | Yes       |
 | [Locations](endpoints/Locations.md)         | Yes     | Yes     | No        |
-| [Meals](endpoints/Meals.md)                 | Yes     | No      | No        |
+| [Meals](endpoints/Meals.md)                 | Yes     | Yes     | No        |
 | [Profile](endpoints/Profile.md)             | Yes     | No      | No        |
 | [Sleeps](endpoints/Sleeps.md)               | Yes     | Yes     | Yes       |
 | [Sources](endpoints/Sources.md)             | Yes     | No      | No        |
