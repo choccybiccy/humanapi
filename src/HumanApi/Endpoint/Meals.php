@@ -20,4 +20,15 @@ class Meals extends SimpleEndpoint
      * @var bool
      */
     protected $listReturnsArray = true;
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function buildSpecificEntryUrl($id)
+    {
+        return $this->buildUrlParts(array(
+            $this->type,
+            $id,
+        ));
+    }
 }
