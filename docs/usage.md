@@ -111,21 +111,22 @@ an `\Choccybiccy\HumanApi\Endpoint\UnsupportedEndpointMethodException` exception
 Here's a complete list of available endpoints that can be queried against, along with the types of data that
 can be retrieved.
 
-| Endpoint                                      | getList | getById | getRecent |
-|-----------------------------------------------|---------|---------|-----------|
-| [Activities](endpoints/Activities.md)       | Yes     | Yes     | Yes       |
-| [BloodGlucose](endpoints/BloodGlucose.md)   | Yes     | Yes     | Yes       |
-| [BloodyOxygen](endpoints/BloodOxygen.md)    | Yes     | Yes     | Yes       |
-| [BloodPressure](endpoints/BloodPressure.md) | Yes     | Yes     | Yes       |
-| [BodyFat](endpoints/BodyFat.md)             | Yes     | Yes     | Yes       |
-| [BodyMassIndex](endpoints/BodyMassIndex.md) | Yes     | Yes     | Yes       |
-| [Genetics](endpoints/Genetics.md)           | Yes     | No      | No        |
-| [HeartRate](endpoints/HeartRate.md)         | Yes     | Yes     | Yes       |
-| [Height](endpoints/Height.md)               | Yes     | Yes     | Yes       |
-| [Locations](endpoints/Locations.md)         | Yes     | Yes     | No        |
-| [Meals](endpoints/Meals.md)                 | Yes     | Yes     | No        |
-| [Profile](endpoints/Profile.md)             | Yes     | No      | No        |
-| [Sleeps](endpoints/Sleeps.md)               | Yes     | Yes     | Yes       |
-| [Sources](endpoints/Sources.md)             | Yes     | No      | No        |
-| [Weight](endpoints/Weight.md)               | Yes     | Yes     | Yes       |
+| Endpoint                                                      | getList | getById | getRecent |
+|---------------------------------------------------------------|---------|---------|-----------|
+| [Activities](endpoints/Activities.md)                         | Yes     | Yes     | Yes       |
+| [ActivitiesSummaries](endpoints/ActivitiesSummaries.md)       | Yes     | Yes     | Yes       |
+| [BloodGlucose](endpoints/BloodGlucose.md)                     | Yes     | Yes     | Yes       |
+| [BloodyOxygen](endpoints/BloodOxygen.md)                      | Yes     | Yes     | Yes       |
+| [BloodPressure](endpoints/BloodPressure.md)                   | Yes     | Yes     | Yes       |
+| [BodyFat](endpoints/BodyFat.md)                               | Yes     | Yes     | Yes       |
+| [BodyMassIndex](endpoints/BodyMassIndex.md)                   | Yes     | Yes     | Yes       |
+| [Genetics](endpoints/Genetics.md)                             | Yes     | No      | No        |
+| [HeartRate](endpoints/HeartRate.md)                           | Yes     | Yes     | Yes       |
+| [Height](endpoints/Height.md)                                 | Yes     | Yes     | Yes       |
+| [Locations](endpoints/Locations.md)                           | Yes     | Yes     | No        |
+| [Meals](endpoints/Meals.md)                                   | Yes     | Yes     | No        |
+| [Profile](endpoints/Profile.md)                               | Yes     | No      | No        |
+| [Sleeps](endpoints/Sleeps.md)                                 | Yes     | Yes     | Yes       |
+| [Sources](endpoints/Sources.md)                               | Yes     | No      | No        |
+| [Weight](endpoints/Weight.md)                                 | Yes     | Yes     | Yes       |
 
