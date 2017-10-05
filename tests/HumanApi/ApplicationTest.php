@@ -48,13 +48,13 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
      */
     protected function getMockResponse($statusCode = 204)
     {
-        $response =  $this->getMockBuilder('GuzzleHttp\Message\ResponseInterface')
+        $response =  $this->getMockBuilder('Psr\Http\Message\ResponseInterface')
             ->disableOriginalConstructor()
-            ->setMethods(array("json", "getStatusCode", "getReasonPhrase"))
+            ->setMethods(array("getBody", "getStatusCode", "getReasonPhrase"))
             ->getMockForAbstractClass();
         $response->expects($this->any())
-            ->method("json")
-            ->willReturn(array());
+            ->method("getBody")
+            ->willReturn(json_encode(array()));
         $response->expects($this->any())
             ->method("getStatusCode")
             ->willReturn($statusCode);

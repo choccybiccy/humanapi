@@ -156,14 +156,14 @@ class EndpointTest extends \PHPUnit_Framework_TestCase
 
         $result = array("id" => 1, "exampleKey" => "Test");
 
-        $response = $this->getMockBuilder('GuzzleHttp\Message\ResponseInterface')
+        $response = $this->getMockBuilder('Psr\Http\Message\ResponseInterface')
             ->disableOriginalConstructor()
-            ->setMethods(array("json"))
+            ->setMethods(array("getBody"))
             ->getMockForAbstractClass();
 
         $response->expects($this->once())
-            ->method("json")
-            ->willReturn($result);
+            ->method("getBody")
+            ->willReturn(json_encode($result));
 
         $this->setProtectedProperty($endpoint, "method", "get");
         $this->setProtectedProperty($endpoint, "accessToken", $accessToken);
