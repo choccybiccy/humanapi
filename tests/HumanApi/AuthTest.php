@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Traits\ReflectionMethods;
  * Class AuthTest
  * @package Choccybiccy\HumanApi
  */
-class AuthTest extends \PHPUnit_Framework_TestCase
+class AuthTest extends \PHPUnit\Framework\TestCase
 {
 
     use ReflectionMethods;
