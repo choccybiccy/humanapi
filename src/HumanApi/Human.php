@@ -52,6 +52,7 @@ class Human
         if (class_exists($endpoint)) {
             /** @var Endpoint $endpoint */
             $endpoint = new $endpoint;
+            $endpoint->setDefaultOption('verify', false);
             $endpoint->setAccessToken($this->accessToken);
 
             return $endpoint;
