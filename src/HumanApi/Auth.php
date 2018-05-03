@@ -56,6 +56,6 @@ class Auth extends Api
                 "json" => $this->sessionTokenData,
             )
         );
-        return $response->json();
+        return json_decode($response->getBody(),true);
     }
 }
