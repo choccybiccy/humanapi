@@ -86,7 +86,7 @@ class Application extends Api
             )
         );
 
-        return $this->buildCollection($response->json());
+        return $this->buildCollection(json_decode($response->getBody(),true));
 
     }
 
@@ -108,7 +108,7 @@ class Application extends Api
             )
         );
 
-        return $this->buildCollection($response->json());
+        return $this->buildCollection(json_decode($response->getBody(),true));
 
     }
 
@@ -131,7 +131,7 @@ class Application extends Api
             )
         );
 
-        return new Model($response->json(), $this);
+        return new Model(json_decode($response->getBody(),true), $this);
 
     }
 
