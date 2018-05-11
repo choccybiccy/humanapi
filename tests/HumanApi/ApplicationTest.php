@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Traits\ReflectionMethods;
  * Class ApplicationTest
  * @package Choccybiccy\HumanApi
  */
-class ApplicationTest extends \PHPUnit_Framework_TestCase
+class ApplicationTest extends \PHPUnit\Framework\TestCase
 {
 
     use ReflectionMethods;
@@ -48,13 +48,13 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
      */
     protected function getMockResponse($statusCode = 204)
     {
-        $response =  $this->getMockBuilder('GuzzleHttp\Message\ResponseInterface')
+        $response =  $this->getMockBuilder('Psr\Http\Message\ResponseInterface')
             ->disableOriginalConstructor()
-            ->setMethods(array("json", "getStatusCode", "getReasonPhrase"))
+            ->setMethods(array("getBody", "getStatusCode", "getReasonPhrase"))
             ->getMockForAbstractClass();
         $response->expects($this->any())
-            ->method("json")
-            ->willReturn(array());
+            ->method("getBody")
+            ->willReturn(json_encode(array()));
         $response->expects($this->any())
             ->method("getStatusCode")
             ->willReturn($statusCode);
@@ -80,7 +80,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
     {
 
         $application = $this->getMockApplication();
-        $this->setExpectedException('Choccybiccy\HumanApi\Exception\UnsupportedBatchEndpointException');
+        $this->expectException('Choccybiccy\HumanApi\Exception\UnsupportedBatchEndpointException');
         $application->batch("thisEndpointDoesntExist");
 
     }
@@ -212,7 +212,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
      */
     public function testDeleteUserThrowsExceptionWhenWrongErrorCode()
     {
-        $this->setExpectedException('\Choccybiccy\HumanApi\Exception\UnexpectedResponseException');
+        $this->expectException('\Choccybiccy\HumanApi\Exception\UnexpectedResponseException');
         $this->testDeleteUserById(500);
     }
 
@@ -246,7 +246,7 @@ class ApplicationTest extends \PHPUnit_Framework_TestCase
             )
             ->willThrowException($exception);
 
-        $this->setExpectedException('\Choccybiccy\HumanApi\Exception\UnexpectedResponseException');
+        $this->expectException('\Choccybiccy\HumanApi\Exception\UnexpectedResponseException');
         $application->deleteUserById($humanId);
 
     }

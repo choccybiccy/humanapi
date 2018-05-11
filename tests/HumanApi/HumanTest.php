@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Human;
  * Class HumanTest
  * @package Choccybiccy\HumanApi
  */
-class HumanTest extends \PHPUnit_Framework_TestCase
+class HumanTest extends \PHPUnit\Framework\TestCase
 {
 
     /**
