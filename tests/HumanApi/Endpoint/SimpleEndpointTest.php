@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Traits\ReflectionMethods;
  * Class SimpleEndpointTest
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class SimpleEndpointTest extends \PHPUnit_Framework_TestCase
+class SimpleEndpointTest extends \PHPUnit\Framework\TestCase
 {
 
     use ReflectionMethods;
@@ -44,7 +44,7 @@ class SimpleEndpointTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->setExpectedException('Choccybiccy\HumanApi\Exception\UnsupportedEndpointMethodException');
+        $this->expectException('Choccybiccy\HumanApi\Exception\UnsupportedEndpointMethodException');
         $this->runProtectedMethod($simple, "buildSpecificEntryUrl", array(1));
 
     }
@@ -60,7 +60,7 @@ class SimpleEndpointTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->setExpectedException('Choccybiccy\HumanApi\Exception\UnsupportedEndpointMethodException');
+        $this->expectException('Choccybiccy\HumanApi\Exception\UnsupportedEndpointMethodException');
         $this->runProtectedMethod($simple, "buildRecentUrl", array(1));
 
     }

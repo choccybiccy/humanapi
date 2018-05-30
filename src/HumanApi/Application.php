@@ -86,7 +86,8 @@ class Application extends Api
             )
         );
 
-        return $this->buildCollection(json_decode($response->getBody(),true));
+        $responseJson = json_decode($response->getBody(), true);
+        return $this->buildCollection($responseJson);
 
     }
 
@@ -108,7 +109,9 @@ class Application extends Api
             )
         );
 
-        return $this->buildCollection(json_decode($response->getBody(),true));
+
+        $responseJson = json_decode($response->getBody(), true);
+        return $this->buildCollection($responseJson);
 
     }
 
@@ -131,7 +134,9 @@ class Application extends Api
             )
         );
 
-        return new Model(json_decode($response->getBody(),true), $this);
+
+        $responseJson = json_decode($response->getBody(), true);
+        return new Model($responseJson, $this);
 
     }
 

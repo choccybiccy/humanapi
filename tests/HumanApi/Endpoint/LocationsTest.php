@@ -8,7 +8,7 @@ use Choccybiccy\HumanApi\Traits\ReflectionMethods;
  * Class LocationsTest
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class LocationsTest extends \PHPUnit_Framework_TestCase
+class LocationsTest extends \PHPUnit\Framework\TestCase
 {
 
     use ReflectionMethods;
