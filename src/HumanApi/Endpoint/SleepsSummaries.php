@@ -3,14 +3,14 @@
 namespace Choccybiccy\HumanApi\Endpoint;
 
 /**
- * Class Activities
+ * Class ActivitiesSummaries
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class Activities extends PeriodicEndpoint
+class SleepsSummaries extends PeriodicEndpoint
 {
 
     /**
      * @var string
      */
-    protected $type = "activities";
-    }
+    protected $type = "sleeps/summaries";
+}

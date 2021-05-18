@@ -3,14 +3,18 @@
 namespace Choccybiccy\HumanApi\Endpoint;
 
 /**
- * Class Activities
+ * Class Reports
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class Activities extends PeriodicEndpoint
+class Reports extends MedicalEndpoint
 {
 
     /**
      * @var string
      */
-    protected $type = "activities";
+    protected $type = "medical/reports";
+
+    function readCollection(){
+        
     }
+}

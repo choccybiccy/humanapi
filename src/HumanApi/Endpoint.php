@@ -119,6 +119,7 @@ abstract class Endpoint extends Api
         );
 
         $responseJson = json_decode($response->getBody(), true);
+
         if (!$this->listReturnsArray) {
             $responseJson = array($responseJson);
         }

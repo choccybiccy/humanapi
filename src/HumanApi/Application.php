@@ -109,6 +109,7 @@ class Application extends Api
             )
         );
 
+
         $responseJson = json_decode($response->getBody(), true);
         return $this->buildCollection($responseJson);
 
@@ -132,6 +133,7 @@ class Application extends Api
                 )
             )
         );
+
 
         $responseJson = json_decode($response->getBody(), true);
         return new Model($responseJson, $this);

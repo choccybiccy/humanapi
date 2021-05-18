@@ -3,14 +3,14 @@
 namespace Choccybiccy\HumanApi\Endpoint;
 
 /**
- * Class Activities
+ * Class Weight
  * @package Choccybiccy\HumanApi\Endpoint
  */
-class Activities extends PeriodicEndpoint
+class MedicalProfile extends SimpleEndpoint
 {
 
     /**
      * @var string
      */
-    protected $type = "activities";
-    }
+    protected $type = "medical/profile";
+}

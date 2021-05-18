@@ -28,6 +28,26 @@ class Collection implements Countable, IteratorAggregate
     {
         $this->data[] = $model;
     }
+    
+    /**
+     * Get data as array
+     *
+     * @return array
+     */
+    public function all()
+    {
+        return $this->data[0]->all();
+    }
+    
+    /**
+     * Get data as array
+     *
+     * @return array
+     */
+    public function data()
+    {
+        return $this->data;
+    }
 
     /**
      * Collection count
@@ -47,6 +67,36 @@ class Collection implements Countable, IteratorAggregate
     public function current()
     {
         return $this->getIterator()->current();
+    }
+    
+    /**
+     * Get valid
+     *
+     * @return Model
+     */
+    public function valid()
+    {
+        return $this->getIterator()->valid();
+    }
+    
+    /**
+     * Get key
+     *
+     * @return Model
+     */
+    public function key()
+    {
+        return $this->getIterator()->key();
+    }
+    
+    /**
+     * Get next
+     *
+     * @return Model
+     */
+    public function next()
+    {
+        return $this->getIterator()->next();
     }
 
     /**
