@@ -14,19 +14,7 @@ class Reports extends MedicalEndpoint
      */
     protected $type = "medical/reports";
 
-    /**
-     * @var bool
-     */
-    protected $listReturnsArray = true;
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function buildSpecificEntryUrl($id)
-    {
-    	return $this->buildUrlParts(array(
-            $this->type,
-            $id,
-        ));
+    function readCollection(){
+        
     }
 }
